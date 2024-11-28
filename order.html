@@ -2,119 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
-
-    <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Modern Restaurant Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['"Dangrek"', 'san-serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-
-<body>
-    <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logoo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
-
-    <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search">
-        <div class="container">
+<body class="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8 font-body">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="px-4 py-5 sm:p-6">
+            <h1 class="text-3xl font-bold text-gray-900 text-center mb-8 font-heading">Confirm Your Order</h1>
             
-            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
-
-            <form action="#" class="order">
-                <fieldset>
-                    <legend>Selected Food</legend>
-
-                    <div class="food-menu-img">
-                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Selected Food</h2>
+                <div class="flex items-center space-x-4">
+                    <img src="images/c-pizza.jpg" alt="Mushroom Pizza" class="w-24 h-24 rounded-md object-cover">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Mushroom Pizza</h3>
+                        <p class="text-gray-600">$5.00 per item</p>
+                        <div class="flex items-center mt-2">
+                            <label for="quantity" class="sr-only">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1" class="block w-16 rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+                        </div>
                     </div>
-    
-                    <div class="food-menu-desc">
-                        <h3>Mushroom Pizza</h3>
-                        <p class="food-price">$5</p>
+                </div>
+            </div>
 
-                        <div class="order-label">Quantity</div>
-                        <input type="number" name="qty" class="input-responsive" value="1" required>
-                        
+            <form class="space-y-6">
+                <div>
+                    <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" name="full-name" id="full-name" placeholder="E.g. Hishaam Rafeeu" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="E.g. 9609xxxxxx" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="email" placeholder="E.g. hishaamrafeeu@gmail.com" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                </div>
+
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                    <textarea name="address" id="address" rows="4" placeholder="E.g. Street, City, Country" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"></textarea>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Order Summary</h2>
+                    <div class="flex justify-between mb-2">
+                        <span>Subtotal</span>
+                        <span>$5.00</span>
                     </div>
+                    <div class="flex justify-between mb-2">
+                        <span>Delivery Fee</span>
+                        <span>$2.00</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-lg mt-4 pt-4 border-t border-gray-200">
+                        <span>Total</span>
+                        <span>$7.00</span>
+                    </div>
+                </div>
 
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Delivery Details</legend>
-                    <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="E.g. Hishaam Rafeeu" class="input-responsive" required>
-
-                    <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="E.g. 9609xxxxxx" class="input-responsive" required>
-
-                    <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hishaamrafeeu@gmail.com" class="input-responsive" required>
-
-                    <div class="order-label">Address</div>
-                    <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
-
-                    <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
-                </fieldset>
-
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                        Confirm Order
+                    </button>
+                </div>
             </form>
-
         </div>
-    </section>
-    <!-- fOOD sEARCH Section Ends Here -->
-
-    <!-- social Section Starts Here -->
-    <section class="social">
-        <div class="container text-center">
-            <ul>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- social Section Ends Here -->
-
-    <!-- footer Section Starts Here -->
-    <section class="footer">
-        <div class="container text-center">
-      
-        </div>
-    </section>
-    <!-- footer Section Ends Here -->
-
+    </div>
 </body>
 </html>
